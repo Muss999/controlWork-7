@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./OrderInterface.css";
-import AddItemsBlock from "../components/AddItemsBlock/AddItemsBlock";
+import AddDishesBlock from "../components/AddDishesBlock/AddDishesBlock";
 import OrderDetails from "../components/OrderDetails/OrderDetails";
 
 const OrderInterface = () => {
@@ -69,7 +69,7 @@ const OrderInterface = () => {
     return (
         <div className="OrderInterface">
             <OrderDetails dishes={dishes} price={price} />
-            <AddItemsBlock dishes={dishes} addDish={addDish} />
+            <AddDishesBlock dishes={dishes} addDish={addDish} />
         </div>
     );
 };

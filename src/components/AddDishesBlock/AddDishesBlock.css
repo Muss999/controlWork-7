@@ -1,0 +1,20 @@
+.AddDishesBlock {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+    width: 55%;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+.AddDishesBlock h2 {
+    font-size: 30px;
+    text-align: center;
+    margin: 0;
+}
+.AddDishesBlock__dishes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}

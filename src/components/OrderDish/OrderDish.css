@@ -1,0 +1,35 @@
+.OrderDishBlock {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+}
+.OrderDishBlock__text {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+.OrderDishBlock__text img {
+    width: 30px;
+    height: 30px;
+}
+.OrderDishBlock__text h4 {
+    margin: 0;
+}
+.OrderDishBlock__btns {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.OrderDishBlock__btns button {
+    border: none;
+    border-radius: 10px;
+    background-color: green;
+    padding: 5px 15px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}

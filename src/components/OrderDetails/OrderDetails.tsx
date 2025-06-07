@@ -1,6 +1,7 @@
 import type { FC } from "react";
 import type { TypeDish } from "../../helpers/types";
 import "./OrderDetails.css";
+import OrderDish from "../OrderDish/OrderDish";
 
 interface Props {
     dishes: TypeDish[];
@@ -11,10 +12,19 @@ const OrderDetails: FC<Props> = (props) => {
 
     return (
         <div className="OrderDetails">
+            <h2>Order details</h2>
             {price ? (
-                <div>
-                    <p>Total price: {price} KGS</p>
-                </div>
+                <>
+                    {dishes.map((dish) => {
+                        if (dish.count > 0) {
+                            return <OrderDish key={dish.id} dish={dish} />;
+                        }
+                        return null;
+                    })}
+                    <p className="OrderDetails__totalPrice">
+                        Total price: {price} KGS
+                    </p>
+                </>
             ) : (
                 <>
                     <p>Order is empty!</p>

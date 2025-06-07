@@ -1,14 +1,23 @@
 .OrderDetails {
     display: flex;
     flex-direction: column;
-    gap: 10px;
     align-items: center;
-    padding: 10px;
-    width: 30%;
+    padding: 20px;
+    width: 40%;
     border: 2px solid black;
     border-radius: 10px;
     font-size: 20px;
 }
+.OrderDetails h2 {
+    margin: 0;
+}
 .OrderDetails p {
     margin: 0;
+}
+
+.OrderDetails .OrderDetails__totalPrice {
+    margin-top: 10px;
+    font-size: 24px;
+    padding-top: 10px;
+    border-top: 2px solid black;
 }

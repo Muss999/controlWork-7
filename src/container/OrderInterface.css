@@ -1,6 +1,6 @@
 .OrderInterface {
     display: flex;
     gap: 30px;
-    align-items: center;
+    align-items: start;
     margin: 20px auto 0;
 }
