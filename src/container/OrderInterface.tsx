@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./OrderInterface.css";
-import Dish from "../components/Dish/Dish";
+import AddItemsBlock from "../components/AddItemsBlock/AddItemsBlock";
 
 const OrderInterface = () => {
     const [dishes, setDishes] = useState([
@@ -47,21 +47,31 @@ const OrderInterface = () => {
             id: crypto.randomUUID(),
         },
     ]);
+    const [price, setPrice] = useState(0);
+
+    const addDish = (id: string) => {
+        setDishes((prevState) => {
+            return prevState.map((dish) => {
+                if (dish.id === id) {
+                    const newPrice = price + dish.price;
+                    setPrice(newPrice);
+                    return {
+                        ...dish,
+                        count: dish.count + 1,
+                    };
+                }
+                return dish;
+            });
+        });
+    };
 
     return (
         <div className="OrderInterface">
-            <div className="AddItemsBlock">
-                {dishes.map((dish) => {
-                    return (
-                        <Dish
-                            key={dish.id}
-                            image={dish.image}
-                            name={dish.name}
-                            price={dish.price}
-                        />
-                    );
-                })}
+            <div className="OrderDetails">
+                <p>Order is empty!</p>
+                <p>Please add some dishes!</p>
             </div>
+            <AddItemsBlock dishes={dishes} addDish={addDish} />
         </div>
     );
 };

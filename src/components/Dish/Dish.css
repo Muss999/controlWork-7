@@ -14,8 +14,8 @@
     box-shadow: 0 0 6px 0 gray;
 }
 .DishBlock img {
-    height: 60px;
-    width: 60px;
+    height: 70px;
+    width: 70px;
 }
 .DishBlock__text {
     display: flex;
