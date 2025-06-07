@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./OrderInterface.css";
 import AddItemsBlock from "../components/AddItemsBlock/AddItemsBlock";
+import OrderDetails from "../components/OrderDetails/OrderDetails";
 
 const OrderInterface = () => {
     const [dishes, setDishes] = useState([
@@ -67,10 +68,7 @@ const OrderInterface = () => {
 
     return (
         <div className="OrderInterface">
-            <div className="OrderDetails">
-                <p>Order is empty!</p>
-                <p>Please add some dishes!</p>
-            </div>
+            <OrderDetails dishes={dishes} price={price} />
             <AddItemsBlock dishes={dishes} addDish={addDish} />
         </div>
     );
