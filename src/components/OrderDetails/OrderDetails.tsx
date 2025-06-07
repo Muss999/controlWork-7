@@ -1,4 +1,4 @@
-import type { FC } from "react";
+import type { FC, MouseEventHandler } from "react";
 import type { TypeDish } from "../../helpers/types";
 import "./OrderDetails.css";
 import OrderDish from "../OrderDish/OrderDish";
@@ -8,9 +8,10 @@ interface Props {
     price: number;
     deleteOneDish: (id: string) => void;
     deleteDish: (id: string) => void;
+    clearOrderList: MouseEventHandler;
 }
 const OrderDetails: FC<Props> = (props) => {
-    const { dishes, price, deleteOneDish, deleteDish } = props;
+    const { dishes, price, deleteOneDish, deleteDish, clearOrderList } = props;
 
     return (
         <div className="OrderDetails">
@@ -30,9 +31,14 @@ const OrderDetails: FC<Props> = (props) => {
                         }
                         return null;
                     })}
-                    <p className="OrderDetails__totalPrice">
-                        Total price: {price} KGS
-                    </p>
+                    <div className="OrderDetails__bottom">
+                        <p className="OrderDetails__totalPrice">
+                            Total price: {price} KGS
+                        </p>
+                        <button type="button" onClick={clearOrderList}>
+                            Clear
+                        </button>
+                    </div>
                 </>
             ) : (
                 <>

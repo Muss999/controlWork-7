@@ -111,6 +111,18 @@ const OrderInterface = () => {
             });
         });
     };
+    const clearOrderList = () => {
+        setDishes((prevState) => {
+            const newPrice = 0;
+            setPrice(newPrice);
+            return prevState.map((dish) => {
+                return {
+                    ...dish,
+                    count: 0,
+                };
+            });
+        });
+    };
 
     return (
         <div className="OrderInterface">
@@ -119,6 +131,7 @@ const OrderInterface = () => {
                 price={price}
                 deleteOneDish={deleteOneDish}
                 deleteDish={deleteDish}
+                clearOrderList={() => clearOrderList()}
             />
             <AddDishesBlock dishes={dishes} addDish={addDish} />
         </div>

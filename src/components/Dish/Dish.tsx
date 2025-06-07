@@ -13,7 +13,7 @@ const Dish: FC<Props> = (props) => {
     const { image, name, price, addDish } = props;
     return (
         <div className="DishBlock" onClick={addDish}>
-            <img src={image} alt={image} />
+            <img src={image} alt={name} />
             <div className="DishBlock__text">
                 <h4>{name}</h4>
                 <p>Price: {price} KGS</p>

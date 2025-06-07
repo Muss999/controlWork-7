@@ -9,6 +9,13 @@
     padding: 15px;
     cursor: pointer;
     user-select: none;
+    transition: 0.3s;
+}
+.DishBlock:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+    transition: transform 0.2s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 .DishBlock:active {
     box-shadow: 0 0 6px 0 gray;

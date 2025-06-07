@@ -14,10 +14,23 @@
 .OrderDetails p {
     margin: 0;
 }
-
-.OrderDetails .OrderDetails__totalPrice {
+.OrderDetails__bottom {
+    display: flex;
+    align-items: center;
+    gap: 20px;
     margin-top: 10px;
-    font-size: 24px;
-    padding-top: 10px;
+    padding-top: 15px;
     border-top: 2px solid black;
+}
+.OrderDetails .OrderDetails__totalPrice {
+    font-size: 24px;
+}
+.OrderDetails__bottom button {
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(136, 16, 16);
+    padding: 5px 15px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
 }

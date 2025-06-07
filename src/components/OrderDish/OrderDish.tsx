@@ -12,7 +12,7 @@ const OrderDish: FC<Props> = (props) => {
     return (
         <div className="OrderDishBlock">
             <div className="OrderDishBlock__text">
-                <img src={image} alt={image} />
+                <img src={image} alt={name} />
                 <h4>{name}</h4>
                 <p>{count}x</p>
                 <p>{price * count} KGS</p>
