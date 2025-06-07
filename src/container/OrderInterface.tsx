@@ -65,10 +65,47 @@ const OrderInterface = () => {
             });
         });
     };
+    const deleteOneDish = (id: string) => {
+        setDishes((prevState) => {
+            return prevState.map((dish) => {
+                if (dish.id === id) {
+                    if (dish.count <= 0) return dish;
+                    const newPrice = price - dish.price;
+                    setPrice(newPrice);
+                    return {
+                        ...dish,
+                        count: dish.count - 1,
+                    };
+                }
+                return dish;
+            });
+        });
+    };
+    const deleteDish = (id: string) => {
+        setDishes((prevState) => {
+            return prevState.map((dish) => {
+                if (dish.id === id) {
+                    if (dish.count <= 0) return dish;
+                    const newPrice = price - dish.price * dish.count;
+                    setPrice(newPrice);
+                    return {
+                        ...dish,
+                        count: 0,
+                    };
+                }
+                return dish;
+            });
+        });
+    };
 
     return (
         <div className="OrderInterface">
-            <OrderDetails dishes={dishes} price={price} />
+            <OrderDetails
+                dishes={dishes}
+                price={price}
+                deleteOneDish={deleteOneDish}
+                deleteDish={deleteDish}
+            />
             <AddDishesBlock dishes={dishes} addDish={addDish} />
         </div>
     );

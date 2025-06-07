@@ -6,9 +6,11 @@ import OrderDish from "../OrderDish/OrderDish";
 interface Props {
     dishes: TypeDish[];
     price: number;
+    deleteOneDish: (id: string) => void;
+    deleteDish: (id: string) => void;
 }
 const OrderDetails: FC<Props> = (props) => {
-    const { dishes, price } = props;
+    const { dishes, price, deleteOneDish, deleteDish } = props;
 
     return (
         <div className="OrderDetails">
@@ -17,7 +19,14 @@ const OrderDetails: FC<Props> = (props) => {
                 <>
                     {dishes.map((dish) => {
                         if (dish.count > 0) {
-                            return <OrderDish key={dish.id} dish={dish} />;
+                            return (
+                                <OrderDish
+                                    key={dish.id}
+                                    dish={dish}
+                                    deleteOneDish={() => deleteOneDish(dish.id)}
+                                    deleteDish={() => deleteDish(dish.id)}
+                                />
+                            );
                         }
                         return null;
                     })}

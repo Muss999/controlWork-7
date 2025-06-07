@@ -1,9 +1,11 @@
-import type { FC } from "react";
+import type { FC, MouseEventHandler } from "react";
 import type { TypeDish } from "../../helpers/types";
 import "./OrderDish.css";
 
 interface Props {
     dish: TypeDish;
+    deleteOneDish: MouseEventHandler;
+    deleteDish: MouseEventHandler;
 }
 const OrderDish: FC<Props> = (props) => {
     const { image, name, count, price } = props.dish;
@@ -16,8 +18,12 @@ const OrderDish: FC<Props> = (props) => {
                 <p>{price * count} KGS</p>
             </div>
             <div className="OrderDishBlock__btns">
-                <button type="button">-</button>
-                <button type="button">Delete</button>
+                <button type="button" onClick={props.deleteOneDish}>
+                    -
+                </button>
+                <button type="button" onClick={props.deleteDish}>
+                    Delete
+                </button>
             </div>
         </div>
     );
