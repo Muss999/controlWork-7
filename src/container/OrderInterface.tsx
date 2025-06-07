@@ -113,8 +113,6 @@ const OrderInterface = () => {
     };
     const clearOrderList = () => {
         setDishes((prevState) => {
-            const newPrice = 0;
-            setPrice(newPrice);
             return prevState.map((dish) => {
                 return {
                     ...dish,
@@ -122,6 +120,8 @@ const OrderInterface = () => {
                 };
             });
         });
+        const newPrice = 0;
+        setPrice(newPrice);
     };
 
     return (
