@@ -1,9 +1,10 @@
 import "./App.css";
+import OrderInterface from "./container/OrderInterface";
 
 const App = () => {
     return (
         <div className="container">
-            <div></div>
+            <OrderInterface />
         </div>
     );
 };

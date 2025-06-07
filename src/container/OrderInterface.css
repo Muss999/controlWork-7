@@ -1,0 +1,14 @@
+.OrderInterface {
+    display: flex;
+    margin: 20px auto 0;
+}
+.AddItemsBlock {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+    width: 45%;
+    border: 2px solid black;
+    border-radius: 10px;
+}
