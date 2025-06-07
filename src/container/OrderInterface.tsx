@@ -47,6 +47,20 @@ const OrderInterface = () => {
             image: "https://img.freepik.com/free-vector/isolated-glass-water_1368-2666.jpg?semt=ais_hybrid&w=740",
             id: crypto.randomUUID(),
         },
+        {
+            name: "Fried chicken",
+            price: 75,
+            count: 0,
+            image: "https://img.povar.ru/mobile/f2/03/85/21/ostrie_krilishki_kfc-400469.jpg",
+            id: crypto.randomUUID(),
+        },
+        {
+            name: "Lagman",
+            price: 100,
+            count: 0,
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaVygy1GI-9Kq8ONn-yOzbqEg9LoIbR2pBwg&s",
+            id: crypto.randomUUID(),
+        },
     ]);
     const [price, setPrice] = useState(0);
 
